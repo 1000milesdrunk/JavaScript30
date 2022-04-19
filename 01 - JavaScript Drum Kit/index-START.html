@@ -61,7 +61,11 @@
   //Add event listener and the event we are listening for is called key down 
   //e is the event that just happened here its 'keydown'(key pressed)
   window.addEventListener('keydown',function(e){
-     console.log(e);
+    /*  console.log(e); //we use it to find whats inside the e in e 
+    we have the key pressed and the keycode belonging to it we use that key code to know which key is pressed*/
+    
+    //queryselector is used to return the element within parentheses
+    const audio=document.querySelector(`audio[data-key="`)
   })
 </script>
 
