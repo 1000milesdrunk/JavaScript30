@@ -63,9 +63,33 @@
   window.addEventListener('keydown',function(e){
     /*  console.log(e); //we use it to find whats inside the e in e 
     we have the key pressed and the keycode belonging to it we use that key code to know which key is pressed*/
+    // console.log(e.keyCode);//we use it to get the key codes of the button we press
     
     //queryselector is used to return the element within parentheses
-    const audio=document.querySelector(`audio[data-key="`)
+    //if we give data-key =65 it will be considered as a variable so we use ${}notation
+    //e.keycode returns the keycode and we will take that as input
+    const audio=document.querySelector(`audio[data-key="${e.keyCode}"`)
+    
+    //selects the key query for the pressed button .key or div can be used
+    const key =document.querySelector(`.key[data-key="${e.keyCode}"`)
+
+
+    
+    // console.log(audio);//this is for seeing whats in the audio variable
+    //if a data-key is without audio then it returns null 
+
+    if(!audio) return; // stop the fn from running off all together
+    //if audio is null then return
+
+    //sets the currentTime to 0sec
+    audio.currentTime=0;//rewinds the audio to 0sec
+    //if not play the audio
+    audio.play();
+
+    // console.log(key);
+    //for getting the value of key const
+
+    key.classList.add('playing')
   })
 </script>
 
